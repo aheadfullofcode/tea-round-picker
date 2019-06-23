@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tea Time!</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com/css?family=Merriweather:700,700i|Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="h-screen w-full relative">
+      <h1 class="title absolute">
+        Tea<br />
+        Round<br />
+        Picker
+      </h1>
+
+      <div class="how-to-play absolute">
+        <h2>How to play:</h2>
+        <p>
+          Use the search to find your fellow team members,click on a team member
+          to add them to the Wheel. When you are ready, Give it a Spin by
+          pressing "SPIN". <br /><br />*You must add atleast 2 members to spin
+          the wheel
+        </p>
+      </div>
+
+      <div class="tea-picker js-tea-picker">
+        <form class="search-form absolute">
+          <label for="user" class="text-left">Add a member</label>
+          <input
+            type="text"
+            id="user"
+            class="search js-search"
+            placeholder="Team member"
+          />
+          <ul class="js-suggestions suggestions"></ul>
+        </form>
+      </div>
+
+      <div class="canvas-container absolute right-0">
+        <canvas
+          id="canvas"
+          class="wheel"
+          width="400"
+          height="400"
+          data-responsiveMinWidth="180"
+          data-responsiveScaleHeight="true"
+          data-responsiveMargin="50"
+        >
+          Canvas not supported, use another browser.
+        </canvas>
+        <button
+          class="btn hidden js-spin-trigger p-2 shadow-md absolute capitalize text-center text-white m-2 rounded-full w-32 bg-blue-700"
+        >
+          SPIN
+        </button>
+        <button
+          class="btn-reset js-reset-trigger hidden shadow-md js-spin-trigger p-2 absolute capitalize text-center text-white m-2 rounded-full w-32 bg-red-700"
+        >
+          RESET
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
